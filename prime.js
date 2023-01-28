@@ -1,4 +1,8 @@
-function isPrime(number) {
+function isPrime(input) {
+    const number = Number(input);
+
+    validateInputForIsPrime(number);
+
     if (number == 2) {
         return true;
     }
@@ -10,4 +14,10 @@ function isPrime(number) {
     }
 
     return true;
+}
+
+function validateInputForIsPrime(number) {
+    if (isNaN(number) || number < 2) {
+        throw new Error("wrong input");
+    }
 }
